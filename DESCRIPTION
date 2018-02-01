@@ -1,0 +1,11 @@
+Package: weakinstruments
+Type: Package
+Title: Suite Test for Weak Instruments in R
+Version: 0.0.0.9000
+Author: Daniel Coutinho
+Maintainer: Daniel coutinho <daniel.mar.coutinho@gmail.com>
+Description: Functions to test for weak instruments
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
