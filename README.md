@@ -15,7 +15,7 @@ Only the CLR has no been implemented yet. There are no examples yet.
 
 I will also implement the confidence intervals based on the AR and CLR tests.
 
-#References 
+## References 
 
 The articles above and:
 
