@@ -76,3 +76,4 @@ ar_test <- function(y,X,Z,beta0, intercept = F){
   p_val <- pchisq(k*AR_stat, df = k, lower.tail = F)
   return(list("stat" = AR_stat,"p-val" = p_val))
 }
+
