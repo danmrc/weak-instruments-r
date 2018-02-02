@@ -17,6 +17,9 @@ clr_test(y, x, Z, H, beta0)
 
 \item{beta0}{The hypotesis to be tested}
 }
+\value{
+The LR value and the p-value for the test.
+}
 \description{
 This is an implementation of Moreira(2003)
 }

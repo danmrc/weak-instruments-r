@@ -44,10 +44,11 @@ clr_pvalue <- function(lr,qt,k){
 #' @param H The matrix of exogenous variables (not implemented yet)
 #' @param beta0 The hypotesis to be tested
 #' @note Does only work with one endogenous variable
+#' @return The LR value and the p-value for the test. 
 
 clr_test <- function(y,x,Z,H,beta0){
   clr_val <- clr(y,x,Z,H,beta0)
   LR <- clr_val[[1]]
-  p_val <- clr_pvalue(LR,clt_val[[2]],ncol(Z))
+  p_val <- clr_pvalue(LR,clr_val[[2]],ncol(Z))
   return(list("LR value" = LR,"p-value" = p_val))
 }
