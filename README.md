@@ -11,7 +11,9 @@ The Stock and Yogo test is a test to detect weak instruments in a case where you
 
 The Anderson and Rubin (AR) and Conditional Likelihood Ratio (CLR) tests are tests for hypotesis that do not rely on the instruments. AR works with more than one endogenous variable, while CLR does not. On the other han, with one endogenous variable, CLR is more powerful than AR. 
 
-Only the CLR has no been implemented yet. There are no examples yet.
+Only the CLR has no been implemented yet. 
+
+There are no examples yet.
 
 I will also implement the confidence intervals based on the AR and CLR tests.
 
