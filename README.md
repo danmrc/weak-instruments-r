@@ -9,7 +9,7 @@ This is a package under development that will bring some tests for instrumental 
 
 The Stock and Yogo test is a test to detect weak instruments in a case where you have more than one endogenous variable and more than one instrument. It can compute for at most 3 endogenous variables and up to 30 instruments. There are two modes for this test: one to limit bias up do a certain proportion of the bias of OLS and one to keep the tests size right. The second mode is not implemented, following a comment from Stock himself in NBER summer institute talk, since we have hypotesis tests that works even when the instruments are weak. 
 
-The Anderson and Rubin (AR) and Conditional Likelihood Ratio (CLR) tests are tests for hypotesis that do not rely on the instruments. AR works with more than one endogenous variable, while CLR does not. On the other han, with one endogenous variable, CLR is more powerful than AR. 
+The Anderson and Rubin (AR) and Conditional Likelihood Ratio (CLR) tests are tests for hypotesis that do not rely on the instruments. AR works with more than one endogenous variable, while CLR does not. On the other hand, with one endogenous variable, CLR is more powerful than AR. 
 
 There are no examples yet.
 
