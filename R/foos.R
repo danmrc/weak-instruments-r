@@ -39,12 +39,16 @@ stock_yogo_test <- function(X,Z,bias = 0.1){
   }
   if (E > 3) {
     warning("No avaiable value for more than 3 endogenous variables. Showing critical value for 3.")}
+  if(K > 30){
+    warning("No avaiable value for more than 30 instruments. Showing critical value for 30")
+  }
   stat <- cragg_donald_stats(X,Z)
   E.aux <- ifelse(E > 3,3,E)
+  K.aux <- ifelse(K > 30,30,K)
   crit_val <- crit_val[[E.aux]]
-  row <- which(crit_val[,1] == K)
+  row <- which(crit_val[,1] == K.aux)
   crit_val <- crit_val[row,as.character(bias)]
-  return(list("stat" = stat, "critical_value" = crit_val))
+  return(structure(list("stat" = stat, "critical_value" = crit_val),class = "stockyogo"))
 }
 
 #'AR Test
