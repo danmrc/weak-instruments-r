@@ -1,0 +1,89 @@
+---
+title: "Weak Instruments Tests"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Weak_instruments_tests}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, echo=FALSE}
+#library(weakinstruments)
+library(AER)
+library(stargazer)
+```
+
+# Introduction
+
+Instrumental Variables must satisfies two hypotesis: the exclusion restriction and the inclusion restriction. This package focus on the second: are the instruments correlated enough the endogenous variables? When using one endogenous variable, one can easily check it by using a F test on the first stage: a F-statistics above 10 means a strong instrument. I will generate two examples, one with strong instrument and another with a weak instrument. I set the sample size at 2000, to show that it is not a small sample issue!
+
+```{r}
+
+u <- rnorm(2000) #this will generate the endogenity
+
+z_1 <- rnorm(2000) #this will be the strong instrument
+z_2 <- rnorm(2000) #this will be the weak instrument
+
+x <- u + z_1 + 0.01*z_2 + rnorm(2000)
+
+y <- u + 2*x + rnorm(2000)
+
+first_stage_strong <- lm(x ~ z_1)
+first_stage_weak <- lm(x ~ z_2)
+
+tab <- c(summary(first_stage_strong)$fstatistic[1],summary(first_stage_weak)$fstatistic[1])
+names(tab) <- c("Strong Instrument", "Weak Instrument")
+tab <- round(tab,digits = 4)
+
+knitr::kable(tab,caption = "F-Statistics for Instruments") 
+
+```
+
+The results of a weak instrument are coefficients that can be absolutely anywhere. I will use `ivreg` from AER to show that:
+
+```{r}
+iv_reg <- ivreg(y ~ x|z_2)
+```
+
+```{r,results="asis"}
+
+stargazer(iv_reg, type = "html")
+
+```
+
+# More than one endogenous variable
+
+While the F-test is absolutely adequate for a single endogenous variable, there is a test for when you have two or three endogenous variables. This is the test by Stock & Yogo (2005). We will create two endogenous variables and 4 instruments. The test is done using the command `stock_yogo_test`: 
+
+```{r}
+
+u <- rnorm(200)
+
+z.1 <- rnorm(200)
+z.2 <- rnorm(200)
+z.3 <- rnorm(200)
+z.4 <- rnorm(200)
+
+x.1 <- u + 0.5*z.1 + z.2 + z.4 + rnorm(200)
+x.2 <- u + 0.4*z.1 - 0.9*z.2 + 2*z.3 + rnorm(200)
+
+y <- 1 + u + 2*x.1 - 2*x.2 + rnorm(200)
+
+lm(y ~ x.1 + x.2)
+
+X <- cbind(x.1,x.2)
+Z <- cbind(z.1,z.2,z.3,z.4)
+
+print(stock_yogo_test(X,Z))
+
+```
+
+
+

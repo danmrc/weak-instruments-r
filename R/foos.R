@@ -2,7 +2,7 @@
 #'
 #' @description Computes de Cragg Donald Statistics
 #' @param endogenous The endogenous variables, a n by k matrix.
-#' @param instruments The Instruments, a n by z matsrix.
+#' @param instruments The Instruments, a n by z matrix.
 #' @return The Cragg Donald Statistics
 #' @note The endogenous variables and instruments should be the columns of the matrix
 
@@ -31,7 +31,6 @@ cragg_donald_stats <- function(endogenous,instruments){
 #' @section Warning: Only work until 30 instruments or 3 endogenous variables
 
 stock_yogo_test <- function(X,Z,bias = 0.1){
-  load("data/stock_watson_critical.Rdata")
   K <- ncol(Z)
   E <- ncol(X)
   if (K < (E + 2)) {
@@ -78,6 +77,6 @@ ar_test <- function(y,X,Z,beta0, intercept = F){
   AR_den <- t(u) %*% Mz %*% u/(n - k)
   AR_stat <- AR_num/AR_den
   p_val <- pchisq(k*AR_stat, df = k, lower.tail = F)
-  return(list("stat" = AR_stat,"p-val" = p_val))
+  return(list("stat" = AR_stat,"p_val" = p_val))
 }
 

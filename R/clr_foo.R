@@ -37,7 +37,7 @@ clr_pvalue <- function(lr,qt,k){
 
 #' CLR Test
 #' 
-#' @description This is an implementation of Moreira(2003)
+#' @description This is an implementation of Moreira (2003)
 #' @param y The dependent variable of the second stage
 #' @param x The endogenous variable
 #' @param Z The matrix of instruments
@@ -50,5 +50,5 @@ clr_test <- function(y,x,Z,H,beta0){
   clr_val <- clr(y,x,Z,H,beta0)
   LR <- clr_val[[1]]
   p_val <- clr_pvalue(LR,clr_val[[2]],ncol(Z))
-  return(list("LR value" = LR,"p-value" = p_val))
+  return(structure(list("LR value" = LR,"p-value" = p_val), class = "moreiratest"))
 }
