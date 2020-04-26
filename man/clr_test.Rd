@@ -21,7 +21,7 @@ clr_test(y, x, Z, H, beta0)
 The LR value and the p-value for the test.
 }
 \description{
-This is an implementation of Moreira(2003)
+This is an implementation of Moreira (2003)
 }
 \note{
 Does only work with one endogenous variable

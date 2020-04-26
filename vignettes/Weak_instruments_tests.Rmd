@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup, echo=FALSE}
-#library(weakinstruments)
+library(weakinstruments)
 library(AER)
 library(stargazer)
 ```

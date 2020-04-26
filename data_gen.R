@@ -21,7 +21,7 @@ stock_yogo_test(X,Z)
 
 library(AER)
 
-ivreg(y ~ x.1 + x.2|z.1+z.2+z.3+z.4)
+aa <- ivreg(y ~ x.1 + x.2|z.1+z.2+z.3+z.4)
 
 x.1 <- 2*u + 0.1*z.1 - 0.02*z.2 + rnorm(200)
 x.2 <- 2*u + 0.0074*z.4 -0.09*z.2 - 0.012*z.3 + rnorm(200)

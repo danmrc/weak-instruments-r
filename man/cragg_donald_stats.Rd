@@ -9,7 +9,7 @@ cragg_donald_stats(endogenous, instruments)
 \arguments{
 \item{endogenous}{The endogenous variables, a n by k matrix.}
 
-\item{instruments}{The Instruments, a n by z matsrix.}
+\item{instruments}{The Instruments, a n by z matrix.}
 }
 \value{
 The Cragg Donald Statistics
