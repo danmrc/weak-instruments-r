@@ -1,4 +1,7 @@
 # weak-instruments-r
+
+**This package has not been updated in a long time (since R 2.6!). We will fix it.**
+
 Development of weak instruments package for R
 
 This is a package under development that will bring some tests for instrumental variables estimation (IV) with weak instruments. The tests are, so far:
