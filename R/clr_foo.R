@@ -45,6 +45,7 @@ clr_pvalue <- function(lr,qt,k){
 #' @param beta0 The hypotesis to be tested
 #' @note Does only work with one endogenous variable
 #' @return The LR value and the p-value for the test. 
+#' @export
 
 clr_test <- function(y,x,Z,H,beta0){
   clr_val <- clr(y,x,Z,H,beta0)

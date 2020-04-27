@@ -5,6 +5,7 @@
 #' @param instruments The Instruments, a n by z matrix.
 #' @return The Cragg Donald Statistics
 #' @note The endogenous variables and instruments should be the columns of the matrix
+#' @export
 
 cragg_donald_stats <- function(endogenous,instruments){
   residuals <- matrix(0, ncol = ncol(endogenous), nrow = nrow(endogenous))
@@ -29,6 +30,7 @@ cragg_donald_stats <- function(endogenous,instruments){
 #' @param bias The maximum bias accept. Current values are 0.05,0.1,0.2,0.3. Default is 0.1.
 #' @return The value of the Donald Cragg Statistics and the critical value for the number of endogenous and the      number of instruments
 #' @section Warning: Only work until 30 instruments or 3 endogenous variables
+#' @export
 
 stock_yogo_test <- function(X,Z,bias = 0.1){
   K <- ncol(Z)
@@ -60,6 +62,7 @@ stock_yogo_test <- function(X,Z,bias = 0.1){
 #' @param intercept Logical. Should an intercept be included? Default is false.
 #' @note Works with more than one endogenous variable.
 #' If used with the coefficients from TSLS, it computes the J-statistic
+#' @export
 
 ar_test <- function(y,X,Z,beta0, intercept = F){
   if (length(beta0) == 1) {

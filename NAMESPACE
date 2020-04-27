@@ -2,3 +2,7 @@
 
 S3method(print,moreirateste)
 S3method(print,stockyogo)
+export(ar_test)
+export(clr_test)
+export(cragg_donald_stats)
+export(stock_yogo_test)

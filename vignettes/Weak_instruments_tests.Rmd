@@ -85,5 +85,20 @@ print(stock_yogo_test(X,Z))
 
 ```
 
+Now lets generate a case in which the instruments are weak:
+
+```{r}
+
+x.1 <- 2*u + 0.1*z.1 - 0.02*z.2 + rnorm(200)
+x.2 <- 2*u + 0.0074*z.4 -0.09*z.2 - 0.012*z.3 + rnorm(200)
+
+y <- 1 + u + 2*x.1 - 2*x.2 + rnorm(200)
+
+X <- cbind(x.1,x.2)
+Z <- cbind(z.1,z.2,z.3,z.4)
+
+stock_yogo_test(X,Z)
+```
+
 
 
