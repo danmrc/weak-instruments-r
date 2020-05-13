@@ -22,7 +22,7 @@ library(stargazer)
 
 # Introduction
 
-Instrumental Variables must satisfies two hypotesis: the exclusion restriction and the inclusion restriction. This package focus on the second: are the instruments correlated enough the endogenous variables? When using one endogenous variable, one can easily check it by using a F test on the first stage: a F-statistics above 10 means a strong instrument. I will generate two examples, one with strong instrument and another with a weak instrument. I set the sample size at 2000, to show that it is not a small sample issue!
+Instrumental Variables must satisfies two hypotesis: the exclusion restriction (exogenity) and the inclusion restriction (relevance). This package focus on the second: are the instruments correlated enough the endogenous variables? When using one endogenous variable, one can easily check it by using a F test on the first stage: a F-statistics above 10 means a strong instrument. I will generate two examples, one with strong instrument and another with a weak instrument. I set the sample size at 2000, to show that it is not a small sample issue!
 
 ```{r}
 

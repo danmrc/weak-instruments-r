@@ -8,15 +8,12 @@
 #' @export
 
 cragg_donald_stats <- function(endogenous,instruments){
-  residuals <- matrix(0, ncol = ncol(endogenous), nrow = nrow(endogenous))
-  for (i in 1:ncol(endogenous)) {
-    mod.aux <- lm(endogenous[,i] ~ instruments)
-    residuals[,i] <- resid(mod.aux)
-  }
-  Pz <- instruments %*% solve(t(instruments) %*% instruments) %*% t(instruments)
+  reg <- lm(endogenous ~ instruments)
+  residuals <- resid(reg)
+  Pz <- instruments %*% qr.solve(t(instruments) %*% instruments) %*% t(instruments)
   Sv <- cov(residuals)
   sqrt.Sv <- chol(Sv)
-  inv.Sv <- solve(sqrt.Sv)
+  inv.Sv <- qr.solve(sqrt.Sv)
   G <- t(inv.Sv) %*% t(endogenous) %*% Pz %*% endogenous %*% inv.Sv/ncol(instruments)
   g <- min(eigen(G)$values)
   return(g)
