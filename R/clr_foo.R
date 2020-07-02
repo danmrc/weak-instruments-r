@@ -3,7 +3,7 @@
 #' @description Computes the conditional likelihood ratio. Base for the CLR test
 #' @seealso \code{\link{clr_test}}
 
-clr <- function(y,x,Z,H,beta0){
+clr <- function(y, x, Z, H, beta0){
   mod.1 <- lm(y ~ Z)
   mod.2 <- lm(x ~ Z)
   Y <- cbind(y,x)
@@ -42,7 +42,7 @@ clr_pvalue <- function(lr,qt,k){
 #' @param x The endogenous variable
 #' @param Z The matrix of instruments
 #' @param H The matrix of exogenous variables (not implemented yet)
-#' @param beta0 The hypotesis to be tested
+#' @param beta0 The hypothesis to be tested
 #' @note Does only work with one endogenous variable
 #' @return The LR value and the p-value for the test. 
 #' @export

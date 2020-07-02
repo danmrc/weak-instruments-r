@@ -2,7 +2,12 @@ Package: weakinstruments
 Type: Package
 Title: Suite Test for Weak Instruments in R
 Version: 0.0.0.9002
-Author: Daniel Coutinho
+Authors@R: c(person(given = "Pedro", family = "Cavalcante Oliveira", 
+              email = "pedrocolrj@gmail.com", 
+              role = c("aut")),
+              person(given = "Daniel", family = "Coutinho",
+              email = "daniel.mar.coutinho@gmail.com",
+              role = c("aut", "cre")))
 Maintainer: Daniel coutinho <daniel.mar.coutinho@gmail.com>
 Description: Functions to test for weak instruments
 License: GPL-3

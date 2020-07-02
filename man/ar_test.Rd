@@ -18,7 +18,7 @@ ar_test(y, X, Z, beta0, intercept = F)
 \item{intercept}{Logical. Should an intercept be included? Default is false.}
 }
 \description{
-Hypotesis test that do not depends if the instrument is weak or strong
+Hypothesis test that do not depends if the instrument is weak or strong
 }
 \note{
 Works with more than one endogenous variable.
