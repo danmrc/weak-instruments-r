@@ -2,7 +2,7 @@
 % Please edit documentation in R/foos.R
 \name{stock_yogo_test}
 \alias{stock_yogo_test}
-\title{Stock and Yogo Test}
+\title{Stock-Yogo Test}
 \usage{
 stock_yogo_test(X, Z, bias = 0.1)
 }
@@ -17,7 +17,7 @@ stock_yogo_test(X, Z, bias = 0.1)
 The value of the Donald Cragg Statistics and the critical value for the number of endogenous and the      number of instruments
 }
 \description{
-Computes the Stock and Yogo test for weak instruments detection, with critical values
+Computes the Stock-Yogo test for weak instruments detection, with critical values
 }
 \section{Warning}{
  Only work until 30 instruments or 3 endogenous variables

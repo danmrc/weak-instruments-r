@@ -15,7 +15,7 @@ clr_test(y, x, Z, H, beta0)
 
 \item{H}{The matrix of exogenous variables (not implemented yet)}
 
-\item{beta0}{The hypotesis to be tested}
+\item{beta0}{The hypothesis to be tested}
 }
 \value{
 The LR value and the p-value for the test.

@@ -17,7 +17,7 @@ strong_data <- data.frame(z.1,z.2,z.3,z.4,x.1,x.2,y)
 X <- cbind(x.1,x.2)
 Z <- cbind(z.1,z.2,z.3,z.4)
 
-stock_yogo_test(X,Z)
+weakinstruments::stock_yogo_test(X,Z)
 
 library(AER)
 
@@ -40,3 +40,6 @@ weak_data <- data.frame(z.1,z.2,z.3,z.4,x.1,x.2,y)
 
 save(weak_data,file = paste0(getwd(),"/data/weak_data.Rdata"))
 save(strong_data,file = paste0(getwd(),"/data/strong_data.Rdata"))
+
+usethis::use_data(weak_data)
+usethis::use_data(strong_data)
